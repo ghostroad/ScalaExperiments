@@ -8,4 +8,11 @@ object Utils {
   def from(n: BigInt): Stream[BigInt] = cons(n, Utils.from(n+1))
 
   def sqrt(n: BigInt) = math.floor(math.sqrt(n.doubleValue())).toInt
+
+  def divides(n: Int, d: Int) = (n % d) == 0
+
+  def unfold[State, Output](initial: State)(transformation: State => (Output, State)): Stream[Output] = {
+    val (output, newState) = transformation(initial)
+    cons(output, Utils.unfold(newState)(transformation))
+  }
 }
