@@ -1,4 +1,3 @@
-import scala.collection.immutable.Stream.cons
 
 object Euler2 extends App{
 

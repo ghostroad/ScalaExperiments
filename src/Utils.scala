@@ -3,7 +3,20 @@ import scala.collection.immutable.Stream.cons
 import scala.math.BigInt
 
 object Utils {
-  val primes: Stream[BigInt] = BigInt(2) #:: BigInt(3) #:: from(BigInt(5)).filter(n => primes.takeWhile(_ <= sqrt(n)).forall(n % _ != 0))
+  val primes: Stream[BigInt] = BigInt(2) #:: BigInt(3) #:: from(BigInt(5)).filter(n => isPrime(n))
+
+  val one = BigInt(1)
+
+  def isPrime(n: BigInt) = n match {
+    case `one` => false
+    case _ => primes.takeWhile(_ <= sqrt(n)).forall(n % _ != 0)
+  }
+
+  def isPrime(n: Int) = n match {
+    case 1 => false
+    case _ => primes.takeWhile(_ <= sqrt(n)).forall(n % _ != 0)
+  }
+
 
   def from(n: BigInt): Stream[BigInt] = cons(n, Utils.from(n+1))
 
@@ -15,4 +28,5 @@ object Utils {
     val (output, newState) = transformation(initial)
     cons(output, Utils.unfold(newState)(transformation))
   }
+
 }
