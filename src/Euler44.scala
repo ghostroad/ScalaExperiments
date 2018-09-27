@@ -6,7 +6,7 @@ object Euler44 extends App {
 
   def isPerfectSquare(j: Long) : Boolean = math.pow(math.floor(math.sqrt(j)), 2) == j
 
-  def isPentagonal(i: Long) = isPerfectSquare(1 + 24*i) && Utils.divides((math.sqrt(1 + 24 * i) + 1).toInt, 6)
+  def isPentagonal(i: Long) = isPerfectSquare(1 + 24*i) && Utils.divides((math.sqrt(1 + 24 * i) + 1).toLong, 6)
 
   def pentagonalsUntilDifferenceExceeded(difference: Long) =
     (1L to ((difference - 1)/3 + 1)).map(nthPentagonal)

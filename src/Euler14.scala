@@ -31,6 +31,6 @@ object Euler14 extends App {
 
   private val col = new CollatzLength()
 
-  println(from(5).takeWhile(_ < 1000000).maxBy(col.value))
+  println(from[BigInt](5).takeWhile(_ < 1000000).maxBy(col.value))
 
 }

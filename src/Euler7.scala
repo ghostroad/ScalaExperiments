@@ -2,6 +2,6 @@ import Utils._
 
 object Euler7 extends App {
 
-  println(primes(10000))
+  println(primes[BigInt](implicitly)(10000))
 
 }

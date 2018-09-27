@@ -13,6 +13,6 @@ object Euler37 extends App {
     isLeftTruncatablePrime(n) && isRightTruncatablePrime(n)
   }
 
-  println(Utils.from(11).filter(isBiTruncatablePrime).take(11).sum)
+  println(Utils.from[BigInt](11).filter(isBiTruncatablePrime).take(11).sum)
 
 }
