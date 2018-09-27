@@ -3,7 +3,7 @@ import scala.collection.immutable.Stream.cons
 import scala.math.BigInt
 
 object Utils {
-  val primes: Stream[BigInt] = BigInt(2) #:: BigInt(3) #:: from(BigInt(5)).filter(n => isPrime(n))
+  lazy val primes: Stream[BigInt] = BigInt(2) #:: BigInt(3) #:: from(BigInt(5)).filter(n => isPrime(n))
 
   val one = BigInt(1)
 
