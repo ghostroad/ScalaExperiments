@@ -82,5 +82,4 @@ object Utils {
     cons(output, Utils.unfold(newState)(transformation))
   }
 
-
 }
