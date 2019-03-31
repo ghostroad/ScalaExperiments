@@ -1,5 +1,7 @@
 package euler
 
+import euler.utils.Utils
+
 object Euler2 extends App{
 
 

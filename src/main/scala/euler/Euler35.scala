@@ -1,5 +1,7 @@
 package euler
 
+import euler.utils.Utils
+
 object Euler35 extends App {
   def rotations(n: Int) = {
     val asStr = n.toString

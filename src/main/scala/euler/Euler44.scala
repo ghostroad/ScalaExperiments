@@ -1,5 +1,7 @@
 package euler
 
+import euler.utils.Utils
+
 object Euler44 extends App {
 
   def nthPentagonal(n: Long) : Long = (n*((3*n) - 1))/2

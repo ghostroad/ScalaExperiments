@@ -1,5 +1,7 @@
 package euler
 
+import euler.utils.Utils
+
 object Euler52 extends App {
 
   def digitHistogram(n: Long) = {

@@ -1,5 +1,7 @@
 package euler
 
+import euler.utils.Utils
+
 object Euler37 extends App {
   def isLeftTruncatablePrime(n: BigInt): Boolean = {
     val nStr = n.toString

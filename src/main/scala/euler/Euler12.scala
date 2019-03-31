@@ -1,6 +1,6 @@
 package euler
 
-import euler.Utils.{from, sqrt}
+import euler.utils.Utils.{from, sqrt}
 
 object Euler12 extends App {
   def numDivisors(n: BigInt) = {

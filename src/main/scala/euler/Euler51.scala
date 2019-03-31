@@ -1,5 +1,7 @@
 package euler
 
+import euler.utils.Utils
+
 object Euler51 extends App {
 
   def tenToThe(pow: Int): Long = {

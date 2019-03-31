@@ -1,6 +1,6 @@
 package euler
 
-import euler.Utils.sqrt
+import euler.utils.Utils.sqrt
 
 import scala.collection.mutable
 

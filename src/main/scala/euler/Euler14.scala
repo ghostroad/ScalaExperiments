@@ -1,6 +1,6 @@
 package euler
 
-import euler.Utils.from
+import euler.utils.Utils.from
 
 import scala.collection.mutable
 

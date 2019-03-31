@@ -1,5 +1,7 @@
 package euler
 
+import euler.utils.Utils
+
 object Euler45 extends App {
   def isHexagonal(n: Long): Boolean = Euler44.isPerfectSquare(1 + 8 * n) && Utils.divides(1 + math.sqrt(1 + 8 * n).toLong, 4)
 

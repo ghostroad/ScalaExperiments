@@ -1,6 +1,6 @@
 package euler
 
-import euler.Utils.divides
+import euler.utils.Utils.divides
 
 object Euler19 extends App {
   class Date(val day: Int, val month: Int, val year: Int) {

@@ -1,6 +1,6 @@
 package euler
 
-import euler.Utils.primes
+import euler.utils.Utils.primes
 
 object Euler7 extends App {
 

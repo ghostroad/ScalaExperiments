@@ -1,4 +1,4 @@
-package euler
+package euler.utils
 
 import scala.collection.immutable.Stream.cons
 import scala.math.BigInt

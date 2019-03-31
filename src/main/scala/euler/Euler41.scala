@@ -1,5 +1,7 @@
 package euler
 
+import euler.utils.Utils
+
 object Euler41 extends App {
 
   def pandigitalNumbers(numDigits: Int) = (1 to numDigits).permutations.map(toInt)
