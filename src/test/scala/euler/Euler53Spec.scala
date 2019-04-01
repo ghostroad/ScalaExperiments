@@ -1,3 +1,5 @@
+package euler
+
 import euler.Euler53._
 import org.scalatest.{FreeSpec, Matchers}
 
