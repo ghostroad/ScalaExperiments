@@ -8,7 +8,7 @@ object Utils {
   trait NumberTheory[T] {
     def inc(n: T) : T
 
-    def isPrime(n: T) = n match {
+    def isPrime(n: T): Boolean = n match {
       case `one` => false
       case _ => primes.takeWhile(lt(_, sqrt(n))).forall(!divides(n, _))
     }
@@ -21,11 +21,12 @@ object Utils {
 
     val one : T
 
-    lazy val primes: Stream[T] = inc(one) #:: succ(2, one) #:: from(succ(3, one))(this).filter(n => isPrime(n))
+    lazy val primes: Stream[T] = inc(one) #:: succ(2, one) #:: from(succ(3, one))(this).filter(isPrime)
 
-    def succ(n: Int, init: T): T = n match {
+    @scala.annotation.tailrec
+    final def succ(n: Int, init: T): T = n match {
       case 0 => init
-      case j => inc(succ(n - 1, init))
+      case _ => succ(n - 1, inc(init))
     }
   }
 
@@ -72,11 +73,11 @@ object Utils {
 
   def from[T](n : T)(implicit numberTheory : NumberTheory[T]) : Stream[T] = Stream.iterate(n)(numberTheory.inc)
 
-  def sqrt(n: BigInt) = math.floor(math.sqrt(n.doubleValue())).toInt
+  def sqrt(n: BigInt): Int = math.floor(math.sqrt(n.doubleValue())).toInt
 
-  def divides(n: Int, d: Int) = (n % d) == 0
+  def divides(n: Int, d: Int): Boolean = (n % d) == 0
 
-  def divides(n: Long, d: Long) = (n % d) == 0
+  def divides(n: Long, d: Long): Boolean = (n % d) == 0
 
   def unfold[State, Output](initial: State)(transformation: State => (Output, State)): Stream[Output] = {
     val (output, newState) = transformation(initial)
